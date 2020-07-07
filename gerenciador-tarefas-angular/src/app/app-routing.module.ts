@@ -1,8 +1,16 @@
+import { TarefaRoutes } from './tarefas/tarefas-routing.module';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/tarefas/listar-tarefas',
+    pathMatch: 'full'
+  },
+  ...TarefaRoutes
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
